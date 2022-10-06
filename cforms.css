@@ -1,0 +1,39 @@
+﻿/*
+   Contact Form Style Sheet
+   Author: Dawn Gregg
+   Date:   9/17/2010
+
+   Filename:         cforms.css
+   Supporting Files: none
+*/
+
+fieldset               {margin-bottom: 10px; padding: 10px; background-color: rgb(233,243,233); border-color: #449900;}
+fieldset span          {color: red}
+
+label.blockLabel       {display: block; position: relative; 
+                        width: 450px; margin: 12px 0px}
+
+label.blockLabel input {position: absolute; left: 140px}
+
+#contactFields { clear:both; }
+
+#fName, #lName         {width: 250px}
+#street1, #street2     {width: 350px}
+
+
+#phone, #city          {width: 150px}
+#state                 {width: 40px}
+#zip                   {width: 80px}
+
+#mailList             {width: 450px; padding: 5px}
+
+#interestFields       {position: relative; width: 450px; height: 120px; padding: 5px}
+#interest1            {position: absolute; top: 20px; left: 0px}
+#interest2            {position: absolute; top: 20px; left: 140px}
+#interest3            {position: absolute; top: 20px; left: 280px}
+#interest4            {position: absolute; top: 50px; left: 0px}
+#interest5            {position: absolute; top: 50px; left: 140px}
+#interest6            {position: absolute; top: 50px; left: 280px}
+#interest7            {position: absolute; top: 80px; left: 0px}
+#interest8            {position: absolute; top: 80px; left: 140px}
+#interest9            {position: absolute; top: 80px; left: 280px}

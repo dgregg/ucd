@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Outdoor Depot - Camping, Hiking, Biking and Backpacking</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="style1.css" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print"/>
+<script type="text/javascript" src="list.js"></script>
+<style>
+.links       { display: block; float: left; font-size: 14px;  text-align:center; margin-left: 5%; margin-right: 5%;
+               background: url(greenright.gif) no-repeat right center; }
+               
+.links a     { display: block; color: black; text-decoration: none;    
+               background:  url(greenleft.gif) no-repeat left center; 
+               padding: 10px 15px 10px 15px; font-weight: bold; }
+             
+.links a:hover  { color: #FFF677;}
+
+table.listTable         {border-collapse: collapse; width: 70%; 
+                           font-size: 14px; margin: 0px 15% 50px 15%}
+
+table.listTable caption {font-weight: bold;	font-size: 20px; color: #449900; padding-bottom: 20px; }
+
+table.listTable col.firstColumn   {background: url(left.jpg) repeat-y left;
+                                   width: 22%}
+table.listTable col.middleColumn1 {background: url(blank.gif);
+                                   width: 40%}
+table.listTable col.middleColumn2 {background: url(blank.gif);
+                                     width: 16%;  }
+                                          
+table.listTable col.lastColumn    {background: url(right.jpg) repeat-y right;
+                                  width: 22%;   }
+
+table.listTable thead     {background: url(top.gif) #449900 repeat-x top;
+                           border-bottom: 2px solid gray}
+
+table.listTable           {background: url(tree.gif) no-repeat 95% 65%; }
+table.listTable tbody tr  {border-bottom: 1px dotted gray}
+
+table tfoot               {background: url(bottom.gif) #449900 repeat-x bottom; 
+                           border-top: 2px solid gray; text-align: center}
+
+table.listTable td          {padding: 0px 5px; }
+table.listTable th          {padding: 0px 5px; letter-spacing: 2px; }
+table.listTable tr          {height: 30px}
+
+table.listTable #topLeft     {background: url(topleft.gif) #449900 no-repeat top left}
+table.listTable #topRight    {background: url(topright.gif) #449900 no-repeat top right}
+table.listTable #bottomLeft  {background: url(bottomleft.gif) #449900 no-repeat bottom left}
+table.listTable #bottomRight {background: url(bottomright.gif) #449900 no-repeat bottom right}
+.colorrow {background-color: rgb(233,243,233); }
+</style>
+</head>
+<body>
+<div id="layout">
+<div id="header">
+  <div id="logo">
+    <h1>OutdoorDepot.com</h1>
+  </div> <!-- end logo -->
+  <div id="tagline">
+    <p>Your outdoor adventures begin here...</p>
+  </div> <!-- end tagline -->
+</div> <!-- end header -->
+<div id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</div> <!-- end of nav -->
+<div id="content">
+ <table class="listTable"
+             summary="A table describing products sold by OutdoorDepot.com">
+         <caption>OutdoorDepot Product List</caption>
+
+         <colgroup>
+            <col class="firstColumn" />
+            <col class="middleColumn1" />
+            <col class="middleColumn2" />
+            <col class="lastColumn" />
+         </colgroup>
+
+         <thead>
+            <tr>
+               <th id="topLeft">&nbsp;</th>
+               <th>Name</th>
+               <th>Price</th>
+               <th id="topRight">Order</th>
+            </tr>
+         </thead>
+
+         <tfoot>
+            <tr>
+               <td id="bottomLeft"></td>
+               <td colspan="2">Call us about special orders!</td>
+               <td id="bottomRight"></td>
+            </tr>
+         </tfoot>
+
+         <tbody>
+      <script type="text/javascript">
+     
+         for (i=0; i< aNames.length; i++) {
+            if (i%2==0) document.write("<tr>");
+            else document.write("<tr class='colorrow'>");
+
+            document.write("<td><img width=80 src="+aImages[i]+"></td>");
+            document.write("<td>"+aNames[i]+"</td>");
+            document.write("<td class='amt'>$"+aPrices[i]+"</td>");
+            document.write("<td><span class=links><a href=details.html?id="+i+">Order Now</a></span></td>");
+            document.write("</tr>");
+         }
+
+      </script>
+     </tbody>
+      </table>
+  
+  
+</div>
+	<!-- end content -->
+<div id="footer">
+  <p>Copyright 2010 by Dawn Gregg</p>
+</div>
+</div><!-- end layot -->
+</body>
+</html>

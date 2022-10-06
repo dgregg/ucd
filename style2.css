@@ -1,0 +1,67 @@
+﻿#layout {
+	background-color:#449900;
+}
+
+#nav
+{
+float: left;
+width: 160px;
+margin: 0;
+padding: .5em;
+}
+
+#content
+{
+margin-left: 200px;
+border-left: 1px solid gray;
+
+}
+
+#footer
+{
+clear: both;
+}
+
+ul li {
+	list-style-image:url('bullet.gif');
+}
+
+#nav li {
+	display:block;
+  list-style: none;
+  list-style-image: none;
+  margin:  0 0 0 -2em;
+}
+
+#nav li a:hover { color: #CAD217; 
+                   text-decoration: underline;}
+                   
+#header {
+	background:url('leaf.png') #FFF677 no-repeat;
+	padding-left: 100px;
+	height: 100px;
+}
+
+h3 span {
+	background-color: #CAD217;
+}
+
+h2 {
+	background:url('rsz_leaf.png') transparent no-repeat;
+	padding-left: 40px;
+}
+
+#contact {
+	float: right;
+	border: 1px black dotted;
+	width: 35%;
+	margin-right: 50px;
+	padding: 5px 5px 5px 5px;
+}
+
+#content {
+	min-height: 300px;
+}
+
+                    
+

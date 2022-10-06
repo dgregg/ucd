@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Tables Assignment</title>
+<meta http-equiv="Content-Type"
+content="text/html; charset=utf-8"/>
+</head>
+<body>
+<style>
+.accent    { background-color:#CAD217;}
+.primary   { background-color:#449900;}
+.secondary { background-color:#FFF677;}
+.tahoma {	font-family: Tahoma;}
+.verdana {	font-family: Verdana;}
+.trebuchet {	font-family: "Trebuchet MS";}
+.century {	font-family: "Century Gothic";}
+.impact {	font-family: Impact;}
+.style1 {
+	text-align: center;
+}
+.style2 {
+	list-style-type: lower-alpha;
+}
+</style>
+<p>You have decided to make some modifications to your web site to utilize some of 
+the nav concepts that you learned this week. Rather than having your web site 
+users go to your product table page and then to your individual product 
+(services or event) details pages you want to place links to all of the pages in 
+the left page margin plus you want to allow for a time when you will have 
+separate pages for each of the locations referenced on your locations page. This 
+leads to a lot of links in your nav. You need to design a sliding nav system 
+in which hidden navs slide horizontally across the page to be revealed to the 
+user. <br />
+</p>
+<p>The nav system you will be designing allows navs to be displayed when the user 
+clicks the nav title from the list of links. Menus should close whenever:</p>
+<ol class="style2">
+	<li>&nbsp;the user clicks another nav title, </li>
+	<li>the user clicks the main part of the page or the page head, and</li>
+	<li>&nbsp;the user clicks the same nav title twice. He does not want nav titles to be 
+activated by the motions of the pointer.</li>
+</ol>
+<p>The navs should be created as create a series of nested unnumbered lists 
+containing the links. You&#39;ll have to take this structure into account when you 
+write your program.<br />
+</p>
+<p>Data files needed for this Assignment: <a href="linkhtml.txt"><kbd>
+linkhtml.txt</kbd></a><kbd>, <a href="link.css">link.css</a>, </kbd><a href="slidestxt.js"><kbd>slidestxt.js</kbd></a><kbd>, 
+</kbd><a href="arrow.gif"><kbd>arrow.gif</kbd></a></p>
+<h3>Creating your Home Page - using JavaScript Sliding Menus</h3>
+<hr />
+<p><strong>Step 1: </strong>First copy your completed Assignment 8 and place it 
+in a new folder (e.g. Assignment 9).&nbsp; </p>
+<ul>
+	<li>Download the 4 assignment files (<a href="linkhtml.txt"><kbd>linkhtml.txt</kbd></a><kbd>, 
+	</kbd><a href="link.css"><kbd>link.css</kbd></a><kbd>, </kbd>
+	<a href="slidestxt.js"><kbd>slidestxt.js</kbd></a><kbd>, 
+</kbd><a href="arrow.gif"><kbd>arrow.gif</kbd></a>) and place them in your 
+	assignment 9 folder.</li>
+	<li>Rename the file <kbd>slidestxt.js</kbd> file to <kbd>slides.js</kbd>.</li>
+	<li>Using your text editor, open your <kbd>link.css</kbd> file and 
+	edit/change the following lines:<ul>
+		<li><code>#linkList { width: 160px; float: left}</code> , change the
+		<code>width </code>you used for your div with an id of <code>nav</code> 
+		in your <kbd>style2.css</kbd> file. </li>
+		<li><code>#linkList a {color: #FFF677; text-decoration: none}</code>, 
+		change the color to the you used in the <code>#nav a</code> style in 
+		your <kbd>style1.css</kbd> file. </li>
+		<li><code>#linkList a:hover {color: #CAD217; }</code>,&nbsp; change the 
+		color to the you used in the <code>#nav a:hover</code> style in your
+		<kbd>style1.css</kbd> file. </li>
+	</ul>
+	</li>
+	<li>Save and close the <kbd>link.css</kbd> page.</li>
+</ul>
+<hr />
+<p><strong>Step 2: </strong>Edit your index.html </p>
+<ul>
+	<li>Using your text editor, open your <kbd>index.html</kbd> and the <kbd>
+	linkhtml.txt</kbd>
+	<ul>
+		<li>Add a link to the external <kbd>slides.js</kbd> file in the head 
+		section of your <kbd>index.html</kbd> page.</li>
+		<li>Place a link to the external <kbd>link.css</kbd> file in the head 
+		section of your <kbd>index.html</kbd> page.</li>
+		<li>Add the following code to the head section of your <kbd>index.html</kbd> 
+		page to ensure list of links is rendered properly in IE:<br />
+		<code>&lt;!--[if IE]&gt;<br />
+		&lt;style type=&quot;text/css&quot;&gt;<br />
+&nbsp; /* IE-specific styles to ensure list of links is rendered properly */<br />
+		</code>&nbsp;&nbsp;&nbsp; #<code>linkList ul li {float: left; width: 
+		100%} <br />
+&nbsp; </code>#<code>linkList ul li a {height: 1%} <br />
+		&lt;/style&gt;<br />
+		&lt;![endif]--&gt;</code></li>
+		<li>Copy the contents of the <kbd>
+	linkhtml.txt</kbd>
+		file into your <kbd>index.html</kbd> and replace the entire nav div 
+		element (e.g. remove everything from the starting <code>&lt;div id=nav&gt;</code> 
+		to the ending <code>&lt;/div&gt;</code> tag).</li>
+	</ul>
+	</li>
+	<li>Study the code of the <kbd>index.html</kbd> file in your text 
+	editor to understand the structure of the list of links on the page. Change 
+	any links that are named incorrectly for the way you designed your site 
+	(e.g. products may become services or events, the individual product names 
+	or location names will also change).</li>
+	<li>Save and close the <kbd>index.html</kbd> page.<br /></li>
+</ul>
+<hr />
+<p><strong>Step 3: </strong>&nbsp;Open the <kbd>slides.js</kbd> file in your text editor. </p>
+<ul>
+	<li>Below the comments, insert a command to run the function makeMenus() when the browser has completed loading 
+the page.<br /></li>
+	<li>Add the following three global variables to the file:<ul>
+		<li>currentSlide used to reference the sliding nav currently displayed in the 
+document. Set its initial value to null.</li>
+		<li>timeID used to reference timed interval commands. Set its initial value to 
+null.</li>
+		<li>leftpos used to store the left coordinate of the active sliding nav. Set its 
+initial value to 0.<br /></li>
+	</ul>
+	</li>
+</ul>
+<hr />
+<p><strong>Step 4: </strong>&nbsp;Add the makeMenus() function. The purpose of this function is to create a 
+reference to all sliding navs in the document and to apply event handlers to 
+objects in the document. Add the following commands to the function:</p>
+<ul>
+	<li>&nbsp;Create an instance of the array object named <code>slideMenus.</code></li>
+	<li>&nbsp;Use the <code>getElementsByTagName() </code>method to store all of the elements in the 
+document in an array named <code>allElems.</code></li>
+	<li>&nbsp;loop through the elements in the allElems array, pushing all of the elements 
+belonging to the <code>slideMenu </code>class into the 
+	<code>slideMenus </code>array.</li>
+	<li>loop through all of the items in the <code>slideMenus</code> array and apply the 
+	<code>onclick</code> 
+event handler to those objects to run the <code>showSlide() 
+	</code>function. Also, for each 
+object in the <code>slideMenus</code> array, reference the first 
+	<code>ul</code> element within that 
+object and set the value of the <code>ul </code>elements left style property to 
+	0px. This 
+command moves all sliding navs (enclosed in unordered lists) to the far left of 
+the page.</li>
+	<li>Add <code>onclick</code> event handlers to the elements with 
+	<code>ID</code> values of 
+	<code>header</code> and 
+	<code>content</code>, 
+running the <code>closeSlide() </code>function.<br /></li>
+</ul>
+<hr />
+<p><strong>Step 5: </strong>&nbsp;Add the&nbsp; the <code>showSlide()</code> function to the file. The purpose of this function is to 
+display a sliding nav on the Web page. </p>
+<ul>
+	<li>In the first line of the function, 
+create a variable named <code>slidelist </code>that stores an object reference to the first 
+	<code>ul</code> element nested within the current object (as referenced by the this keyword).<br />
+	</li>
+</ul>
+<hr />
+<p><strong>Step 6: </strong>&nbsp;Add an if statement to the
+<code>showSlide()</code> function. The purpose of the if 
+statement is to test whether a sliding nav is currently displayed on the page. 
+If the <code>currentSlide</code> object is not equal to null and the 
+<code>ID</code> of the <code>currentSlide</code>  
+is equal to the <code>ID</code> of the <code>slidelist</code> variable, then run the 
+<code>closeSlide()</code> 
+function; otherwise, do the following:</p>
+<ul>
+	<li>Run the <code>closeSlide()</code>  function.</li>
+	<li>Set the <code>currentSlide</code> variable equal to the <code>slidelist</code> variable.</li>
+	<li>Set the display style of the <code>currentSlide</code> variable to block.</li>
+	<li>Run the <code>moveSlide() </code>function repeated at intervals of 1 millisecond. Store 
+the <code>ID</code> of the <em>timed function</em> in <code>timeID</code>.<br />
+	</li>
+</ul>
+<hr />
+<p><strong>Step 7:</strong>&nbsp; Add the <code>closeSlide()</code> function. The purpose of this function is to close any 
+active sliding nav. 
+</p>
+<ul>
+	<li>Use object detection to confirm that the <code>currentSlide</code> 
+variable is not equal
+to null and then run the following commands:<ul>
+		<li>Clear the timed function referenced by the <code>timeID</code> variable.</li>
+		<li>Set the left style of the <code>currentSlide</code>&nbsp; object to 
+		0px and set the display 
+style to none.</li>
+		<li>Set the value of <code>currentSlide</code>&nbsp; to null.<br />
+		</li>
+	</ul>
+	</li>
+</ul>
+<hr />
+<p><strong>Step 8:</strong> Add the <code>moveSlide()</code> function. The purpose of this function is to move a 
+sliding nav horizontally across the page until the <code>left </code>coordinate of the nav 
+exceeds the <code>width</code> you defined for your div with an id of<code> 
+linkList</code> in step 1 above (e.g. <code>160px</code>).
+Add the following commands to the function:<br />
+</p>
+<ul>
+	<li>Increase the value of the <code>leftPos</code> variable by <code>5</code>.</li>
+	<li>If the value of the left position of the <code>currentSlide</code> object is less than or 
+equal to 220, then set the left style of that object to the coordinates 
+<code>leftPos</code><kbd>px</kbd> where <code>leftPos</code>
+is the value of the <code>leftPos</code> variable.<br /></li>
+	<li>Otherwise, clear the timed function referenced by the <code>timeID</code> variable and 
+reset the value of the <code>leftPos</code> variable to <code>0px</code>.<br />
+	</li>
+</ul>
+
+<hr />
+<p><strong>Step 9: </strong>Save your changes to the<kbd>
+slides.js</kbd> file, and then open your the <kbd>index.html</kbd>&nbsp; page in 
+your browser and the links from the list containing a white triangle and verify 
+that clicking those titles results in a subnav containing additional links 
+sliding across the page. Also, verify that you can close a nav by clicking 
+another title, clicking the same title twice, or clicking elsewhere in the main 
+body of the Web page:</p>
+<p class="style1">
+<img alt="Screenshot of your slide navs" height="355" src="Assign9.png" width="650" />&nbsp;</p>
+<hr />
+<p><strong>Step 10: </strong> Submit all your html pages PLUS all your image, 
+JavaScript 
+and CSS files to eCollege so you can receive credit for this assignment. Place all  
+files in a zip file.&nbsp; </p>
+<ul>
+	<li>To create a <code class="file">.zip</code> file on a Windows machine, 
+	first select all of the files you want to add. Then, right-click the files, 
+	select &quot;Send To&quot; and &quot;Compressed (zipped) Folder&quot;.</li>
+	<li>&nbsp;To create a <code class="file">.zip</code> file on a Mac, 
+	Command-click (or Shift-click contiguous files) on all the files you want 
+	included, then choose Create Archive of X Items from the Action nav.</li>
+	<li>RRename the zip file to include your name (e.g. dawngregg_a8.zip)</li>
+</ul>
+<hr />
+<p>
+&nbsp;</p>
+
+
+</body>
+</html>

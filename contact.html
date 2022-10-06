@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Contact us at Outdoor Depot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="style1.css" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+<link rel="stylesheet" type="text/css" href="cforms.css" />
+<link rel="stylesheet" type="text/css" href="print.css" media="print"/>
+   <script src="random.js" type="text/javascript"></script>
+
+   <script type="text/javascript">
+      function showImg() {
+      /*
+         The showImg() function displays a random image from the
+         0.jpg through 9.jpg files. The random image is designed
+         to thwart spammers attempting to send junkmail using
+         our contact form by requiring visual confirmation.
+      */
+
+         var imgNumber = randomInteger(9); // Return a random number from 0 to 9
+         document.write("<img src='"+imgNumber+".jpg' alt='' />");
+      }
+   </script>
+
+</head>
+<body>
+<div id="layout">
+<div id="header">
+  <div id="logo">
+    <h1>OutdoorDepot.com</h1>
+  </div> <!-- end logo -->
+  <div id="tagline">
+    <p>Your outdoor adventures begin here...</p>
+  </div> <!-- end tagline -->
+</div> <!-- end header -->
+<div id="nav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</div> <!-- end of nav -->
+<div id="content">
+  <h2>Contact Us</h2>
+		<p>* indicates required information</p>
+  
+         <form name="contactForm" id="contactForm"
+               action="http://www.thelighthouse.org/cgi-bin/contact"
+               method="post">
+
+            <fieldset id="contactFields">
+
+               <legend>Contact Information</legend>
+
+               <label class="blockLabel">
+
+                  First Name<span>*</span>
+                  <input type="text" id="fName" name="fName" />
+               </label>
+
+               <label class="blockLabel">
+                  Last Name<span>*</span>
+                  <input type="text" id="lName" name="lName" />
+
+               </label>
+
+               <label class="blockLabel">
+                  Email Address<span>*</span>
+                  <input type="text" id="email" name="email" />
+               </label>
+
+               <label class="blockLabel">
+                  Street Address
+                  <input type="text" id="street" name="street" />
+
+               </label>
+
+               <label class="blockLabel">
+                  City
+                  <input type="text" id="city" name="city" value="Denver" style="left: 139px; top: 0px" />
+               </label>
+               <label class="blockLabel">
+                  State
+
+                  <input type="text" id="state" name="state" maxlength="2" value="CO" />
+               </label>
+               <label class="blockLabel">
+                  ZIP
+                  <input type="text" id="zip" name="zip" maxlength="10" />
+               </label>
+
+               <label class="blockLabel">
+                  Phone
+
+                  <input type="text" id="phone" name="phone" />
+               </label>
+
+            </fieldset>
+
+            <fieldset id="OtherInfo">
+               <legend>Other Information</legend>
+
+               <label class="blockLabel">
+                  How did you hear about The OutdoorDepot?
+                  <select id="infoSource" name="infoSource">
+
+                     <option value="talk">Word of Mouth</option>
+                     <option value="ads">TV or Radio Ad</option>
+                     <option value="internet">The Internet</option>
+                     <option value="phonebook">The Phonebook</option>
+                     <option value="schools">College/High School</option>
+                  </select>
+
+               </label>
+
+               <fieldset id="mailList">
+                  <legend>Do you want to be on our mailing list?</legend>
+
+                  <label for="mYes">Yes</label>
+                  <input type="radio" id="mYes" name="mList" value="yes" />
+                  <label for="mNo">No</label>
+
+                  <input type="radio" id="mNo" name="mList" value="no" />
+
+               </fieldset>
+
+               <fieldset id="interestFields">
+                  <legend>I want information on (check all that apply)</legend>
+
+                  <label id="interest1">
+                     <input type="checkbox" name="camping" id="camping" />
+                     Camping
+                  </label>
+
+                  <label id="interest2">
+                     <input type="checkbox" name="camp gear" id="camp gear" />
+                     Camping Gear
+                  </label>
+
+                  <label id="interest3">
+                     <input type="checkbox" name="clothing" id="clothing" />
+                     Clothing
+                  </label>
+
+                  <label id="interest4">
+                     <input type="checkbox" name="hike" id="hike" />
+                     Hiking
+                  </label>
+
+                  <label id="interest5">
+                     <input type="checkbox" name="hike gear" id="hike gear" />
+                     Hiking Gear
+                  </label>
+
+                  <label id="interest6">
+
+                     <input type="checkbox" name="groups" id="groups" />
+                     Groups
+                  </label>
+
+                  <label id="interest7">
+                     <input type="checkbox" name="bike" id="bike" />
+                     Biking
+                  </label>
+                  
+                  <label id="interest8">
+                     <input type="checkbox" name="bike gear" id="bike gear" />
+
+                     Biking Gear
+                  </label>
+
+                  <label id="interest9">
+                     <input type="checkbox" name="events" id="events" />
+                     Events
+                  </label>
+
+               </fieldset>
+
+               <label for="comments" class="blockLabel">Ask us your question:</label>
+
+               <textarea id="comments" name="comments" rows="5" cols="55"></textarea>
+
+            </fieldset>
+            <p><label for="kapcha">As a final security check, enter the 5 numbers 
+                you see displayed below.</label><br/>
+            <input id="kapcha" size="6" /></p>
+            <script type="text/javascript">
+                  showImg();
+                  showImg();
+                  showImg();
+                  showImg();
+                  showImg();
+               </script>
+<br />
+            <input type="submit" value="Submit Request" />
+            <input type="reset" value="Cancel" />
+
+         </form>
+
+
+</div> <!-- end content -->
+<div id="footer">
+  <p>Copyright 2010 by Dawn Gregg</p>
+</div>
+</div><!-- end layout -->
+</body>
+</html>
